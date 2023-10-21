@@ -1,8 +1,9 @@
-import 'package:practice_retrofit/provider/top_headlines_provider.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:practice_retrofit/screens/news_screen.dart';
+import '../../full_news/screen/news_screen.dart';
+import '../controller/top_headlines_provider.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -40,8 +41,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     child: InkWell(
                       onTap: () => setState(() => category = 'general'),
                       child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 3, horizontal: 15),
+                          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                           margin: const EdgeInsets.symmetric(horizontal: 3),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),

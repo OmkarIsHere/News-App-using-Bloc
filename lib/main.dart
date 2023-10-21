@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:practice_retrofit/screens/home_screen.dart';
+import 'features/home/screen/home_screen.dart';
 
 
 void main() {

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_retrofit/model/top_headlines.dart';
+
+import '../../home/model/top_headlines.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({super.key, required this.article});
