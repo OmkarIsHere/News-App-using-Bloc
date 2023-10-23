@@ -22,8 +22,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           elevation: 10,
           backgroundColor: Colors.blueAccent,
           title: const Text(
-            'News',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            'Top Headlines',
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Helvetica-Bold'),
           ),
         ),
         body: Column(
@@ -35,142 +37,140 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 7),
                 children: [
-                  Semantics(
-                    button: true,
-                    enabled: true,
-                    child: InkWell(
-                      onTap: () => setState(() => category = 'general'),
-                      child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
-                          margin: const EdgeInsets.symmetric(horizontal: 3),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            border: Border.all(color: Colors.grey),
-                          ),
-                          child: const Text(
-                            'All',
-                            style: TextStyle(color: Colors.black),
-                          )),
-                    ),
+                  InkResponse(
+                    onTap: () => setState(() => category = 'general'),
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
+                        margin: const EdgeInsets.symmetric(horizontal: 3),
+                        decoration: BoxDecoration(
+                          color: (category == 'general') ?Colors.grey :Colors.transparent,
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(color: Colors.grey),
+                        ),
+                        child: Text(
+                          'All',
+                          style: TextStyle(color:(category == 'general')?Colors.white :Colors.black),
+                        )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () => setState(() => category = 'world'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'world') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'World',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'world')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () => setState(() => category = 'nation'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'nation') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Nation',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'nation')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () => setState(() => category = 'business'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'business') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Business',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'business')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () =>setState(() => category = 'technology'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'technology') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child:  Text(
                           'Technology',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'technology')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () =>setState(() => category = 'entertainment'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'entertainment') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Entertainment',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'entertainment')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () =>setState(() => category = 'sports'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'sports') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Sports',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'sports')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () =>setState(() => category = 'science'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'science') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Science',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'science')?Colors.white :Colors.black),
                         )),
                   ),
-                  InkWell(
+                  InkResponse(
                     onTap: () => setState(() => category = 'health'),
                     child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 3),
                         padding: const EdgeInsets.symmetric(
                             vertical: 3, horizontal: 15),
                         decoration: BoxDecoration(
+                          color: (category == 'health') ?Colors.grey :Colors.transparent,
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Health',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color:(category == 'health')?Colors.white :Colors.black),
                         )),
                   ),
                 ],
@@ -211,14 +211,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                               style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
+                                  fontSize: 14,
+                                  fontFamily: 'OpenSans-Bold'),
                             ),
                             subtitle: Text(
                               data[index].description,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 fontSize: 14,
-                              ),
+                                fontFamily: 'OpenSans-Regular'),
                             ),
                           ),
                         );

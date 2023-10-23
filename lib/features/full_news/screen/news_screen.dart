@@ -13,6 +13,9 @@ class NewsScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 10,
         backgroundColor: Colors.blueAccent,
+        leading: IconButton(
+            onPressed: ()=> Navigator.pop(context),
+            icon:const Icon(Icons.arrow_back, color: Colors.white)),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -51,19 +54,21 @@ class NewsScreen extends StatelessWidget {
                 style:const TextStyle(
                     color: Colors.black,
                     fontSize: 18,
-                    fontWeight: FontWeight.w600),
+                    fontFamily: 'OpenSans-Bold'),
               ),
               const SizedBox(height: 20),
               Text(
                 '\t\t\t\t${article.description}',
                 overflow: TextOverflow.clip,
                 style:const TextStyle(
+                    fontFamily: 'OpenSans-Regular',
                     fontSize: 16),
               ),
               const SizedBox(height: 15),
               Text(
                 '\t\t\t\t${article.content}',
                 style:const TextStyle(
+                    fontFamily: 'OpenSans-Regular',
                     fontSize: 16),
               ),
             ],
