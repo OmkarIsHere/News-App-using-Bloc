@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:practice_retrofit/model/top_headlines.dart';
 import 'package:retrofit/retrofit.dart';
+import '../../features/home/model/top_headlines.dart';
 part 'api_services.g.dart';
 
 @RestApi(baseUrl: 'https://gnews.io/api/v4')
