@@ -1,11 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/home/screen/home_screen.dart';
 
-
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const  MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News App',
+      title: 'Newzz',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,

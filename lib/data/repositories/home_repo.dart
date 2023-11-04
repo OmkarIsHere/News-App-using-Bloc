@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../../domain/services/api_services.dart';
 import '../../features/home/model/top_headlines.dart';
-import '../services/api_services.dart';
 
 class HomeRepo{
   final _apiServices = ApiServices(Dio());

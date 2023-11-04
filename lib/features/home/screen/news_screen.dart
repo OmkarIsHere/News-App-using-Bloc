@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../home/model/top_headlines.dart';
+import '../model/top_headlines.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({super.key, required this.article});
@@ -11,12 +11,16 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 10,
-        backgroundColor: Colors.blueAccent,
+        // elevation: 10,
+        backgroundColor: Colors.white,
+        // leading: IconButton(
+        //   onPressed: () => Navigator.pop(context),
+        //   icon:const Icon(Icons.arrow_back, color: Colors.white, size: 26),
+        // ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          padding: const EdgeInsets.symmetric( horizontal: 15),
           child: Column(
             children: [
               ClipRRect(
@@ -55,14 +59,14 @@ class NewsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                '\t\t\t\t${article.description}',
+                '\t\t\t\t\t${article.description}.',
                 overflow: TextOverflow.clip,
                 style:const TextStyle(
                     fontSize: 16),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 6),
               Text(
-                '\t\t\t\t${article.content}',
+                '\t\t\t\t\t${article.content}.',
                 style:const TextStyle(
                     fontSize: 16),
               ),
