@@ -20,7 +20,7 @@ class NewsScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 15),
+          padding: const EdgeInsets.only( left: 15, right: 15, bottom: 15),
           child: Column(
             children: [
               ClipRRect(
@@ -45,6 +45,7 @@ class NewsScreen extends StatelessWidget {
                   'Source : ${article.source.name}',
                   textAlign: TextAlign.start,
                   style:const TextStyle(
+                      fontFamily: 'OpenSans-Regular',
                       color: Colors.grey,
                       fontSize: 14),
                 ),
@@ -55,19 +56,21 @@ class NewsScreen extends StatelessWidget {
                 style:const TextStyle(
                     color: Colors.black,
                     fontSize: 18,
-                    fontWeight: FontWeight.w600),
+                    fontFamily: 'OpenSans-Bold'),
               ),
               const SizedBox(height: 20),
               Text(
-                '\t\t\t\t\t${article.description}.',
+                '\t\t\t\t\t${article.description}',
                 overflow: TextOverflow.clip,
                 style:const TextStyle(
+                    fontFamily: 'OpenSans-Regular',
                     fontSize: 16),
               ),
               const SizedBox(height: 6),
               Text(
                 '\t\t\t\t\t${article.content}.',
                 style:const TextStyle(
+                    fontFamily: 'OpenSans-Regular',
                     fontSize: 16),
               ),
             ],

@@ -39,7 +39,22 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
+  fonts:
+    - family: Helvetica
+      fonts:
+        - asset: assets/fonts/Helvetica.ttf
 
+    - family: Helvetica-Bold
+      fonts:
+        - asset: assets/fonts/Helvetica-Bold.ttf
+
+    - family: OpenSans-Regular
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+
+    - family: OpenSans-Bold
+      fonts:
+        - asset: assets/fonts/OpenSans-Bold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

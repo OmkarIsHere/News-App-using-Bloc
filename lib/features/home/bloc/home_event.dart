@@ -6,6 +6,9 @@ class HomeFetchDataEvent extends HomeEvent{
   HomeFetchDataEvent(this.category);
 }
 
-class HomeChangeCategoryEvent extends HomeEvent{}
+class HomeChangedCategoryNameEvent extends HomeEvent{
+  final String category;
+  HomeChangedCategoryNameEvent(this.category);
+}
 
 class HomeRedirectToFullNewsEvent extends HomeEvent{}

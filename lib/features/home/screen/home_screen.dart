@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:practice_retrofit/features/home/bloc/home_bloc.dart';
 import 'package:practice_retrofit/features/home/bloc/home_event.dart';
 import 'package:practice_retrofit/features/home/bloc/home_state.dart';
+import 'package:practice_retrofit/features/home/widgets/home_screen_loader.dart';
 import '../widgets/news_categories_widget.dart';
 import 'news_screen.dart';
 
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // String category = 'general';
+
   final homeBloc = HomeBloc();
   @override
   void initState() {
@@ -26,13 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.sizeOf(context);
     return Scaffold(
         appBar: AppBar(
           elevation: 10,
           backgroundColor: Colors.blueAccent,
           title: const Text(
             'Newzz',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Helvetica-Bold'),
           ),
         ),
         body: Column(
@@ -60,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bloc: homeBloc,
             builder: (context, homeState) {
                 if(homeState is HomeLoadingState){
-                  return const Center(child: CupertinoActivityIndicator());
+                  return HomeScreenLoader(size: mediaQuery);//const Center(child: CupertinoActivityIndicator());
                 }
                 else if(homeState is HomeErrorState){
                   return const Center(child: Text('Something went wrong'));
@@ -101,13 +105,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     maxLines: 2,
                                     style: const TextStyle(
                                         fontSize: 16,
-                                        fontWeight: FontWeight.w600),
+                                        letterSpacing: 0,
+                                        fontFamily: 'OpenSans-Bold'),
                                   ),
                                   subtitle: Text(
                                     data.articles[index].description,
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                       fontSize: 14,
+                                      fontFamily: 'OpenSans-Regular',
                                     ),
                                   ),
                                 ),

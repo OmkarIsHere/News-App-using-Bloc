@@ -14,6 +14,11 @@ class HomeDataLoadedState extends HomeState{
   HomeDataLoadedState(this.articles);
 }
 
+class HomeChangedCategoryNameState extends HomeState {
+  final String category;
+  HomeChangedCategoryNameState(this.category);
+}
+
 class HomeErrorState extends HomeState {}
 
 class HomeRedirectToFullNewsState extends HomeActionState{}

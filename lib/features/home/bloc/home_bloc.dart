@@ -15,6 +15,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
      emit(HomeDataLoadedState(articles));
     });
 
+    on<HomeChangedCategoryNameEvent>((event, emit)async{
+      emit(HomeChangedCategoryNameState(event.category));
+    });
+
     on<HomeRedirectToFullNewsEvent>((event, emit)=> emit(HomeRedirectToFullNewsState()));
   }
 
